@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Convection calculation</title>
+</head>
+<body>
+<div>
+<h1 style="color:white">Convection Calculation</h1>
+<form class="grid" action="/result" method="POST">
+    <p>
+        {% if name %}
+        <h2 style="color:white;">{{name[4]}} : {{name[0]}}</h2>
+        <h2 style="color:white;">Nusselt number: {{name[1]}}</h2>
+        <h2 style="color:white;">Heat transfer coefficient(h): {{name[2]}} W/m^2K</h2>
+        <h2 style="color:white;">Heat transfer rate(Q): {{name[3]}} W</h2>
+        {% endif %}
+    </p>
+<label for="convection">Type of Convection:</label>
+<select id="convection" name="convection">
+<option value="forced">Forced Convection</option>
+<option value="free">Free Convection</option>
+</select>
+<br>
+<br>
+<label for="velocity">Velocity of air:</label>
+<input type="number" id="velocity" min="0" step="0.01" name="velocity" placeholder="Velocity(m/sec)"> 
+<br>
+<br>
+<label for="typeht">Type of heat flow:</label>
+<select id="typeht" name="typeht">
+<option value="internal">Internal Flow</option>
+<option value="external">External Flow</option>
+</select>
+<br>
+<br>
+<label for="shape">Type of the surface:</label>
+<select name="shape" name="shape">
+<option value="flatplate">Flat Plate</option>
+<option value="cylinder">Cylindrical</option>
+<option value="sphere">Sphere</option>
+</select>
+<br>
+<br>
+<label for="length">Length of surface:</label>
+<input type="number" id="length" name="length" min="0" step="0.01" placeholder="Length(m)">
+<br>
+<br>
+<label for="breadth">(Breadth/Diameter) of surface:</label>
+<input type="number" id="breadth" min="0" step="0.01" name="breadth" placeholder="Breadth/Diameter(m)" required>
+<br>
+<br>
+<label for="thickness">Internal diameter:</label>
+<input type="number" id="thickness" min="0" step="0.01" name="thickness" placeholder="Thickness(m)">
+<br>
+<br>
+<label for="surftemp">Surface temperature:</label>
+<input type="number" id="surftemp" name="surftemp" placeholder="Centigrade(C)" required minlength="2">
+<br>
+<br>
+<label for="surrtemp">Surrounding temperature:</label>
+<input type="number" id="surrtemp" name="surrtemp" placeholder="Centigrade(C)" required minlength="2">  
+<br>
+<br>
+<button for="calculate" class="file_submit">Calculate</button>
+</form>
+<h4>Developed By:</h4>
+<h4>Harshithreddy(Mechanical)</h4>
+<h4>Yaswanth(Mechanical)</h4>
+</div>
+</body>
+</html>
+<style>
+div{
+position:relative;
+left:40%;
+padding:1px;
+width:550px;
+}
+input,select{
+padding:4px;
+}
+button{
+background-color:blueviolet;
+color:#fff;
+padding:10px;
+font-size:100%;
+position:relative;
+left:40%
+}
+label{
+font-size:25px;
+color:white;
+}
+body{
+background-image:url('https://www.clariwell.in/resources/uploads/Technical-Highlights-and-Roles-of-Mechanical-Design-Engineers.webp');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+h4{
+    position:relative;
+    left:130%;
+    color:white;
+}
+</style>
