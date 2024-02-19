@@ -19,4 +19,4 @@ def calc():
     name=display(convection,velocity,typeht,shape,length,breadth,thickness,surftemp,surrtemp)
     return render_template("index.html",name=name)
 if __name__=="__main__":
-    app.run()
+    app.run(debug=True)
